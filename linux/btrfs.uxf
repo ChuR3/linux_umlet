@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="14.2">
+<diagram program="umlet" version="14.3.0">
+  <help_text>t// Uncomment the following line to change the fontsize and font:
+// fontsize=14
+// fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Welcome to UMLet!
+//
+// Double-click on elements to add them to the diagram, or to copy them
+// Edit elements by modifying the text in this panel
+// Hold Ctrl to select multiple elements
+// Use Ctrl+mouse to select via lasso
+//
+// Use +/- or Ctrl+mouse wheel to zoom
+// Drag a whole relation at its central square icon
+//
+// Press Ctrl+C to copy the whole diagram to the system clipboard (then just paste it to, eg, Word)
+// Edit the files in the "palettes" directory to create your own element palettes
+//
+// Select "Custom Elements &gt; New..." to create new element types
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// This text will be stored with each diagram;  use it for notes.</help_text>
   <zoom_level>10</zoom_level>
   <element>
     <id>UMLUseCase</id>
@@ -2767,7 +2791,7 @@ halign=left</panel_attributes>
     <coordinates>
       <x>4560</x>
       <y>3060</y>
-      <w>200</w>
+      <w>210</w>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
@@ -8189,6 +8213,8 @@ halign=left</panel_attributes>
 	2.如果fragmented
 		hint_byte = last_ptr-&gt;window_start;
 		use_cluster = false;
+注：space_info是将block_group按功能分类(flag raid)
+	cluster是截取block_group中的free_space的一段用于分配
 4.search_start是hint_byte和first_logical_byte的最大值
 5.如果hint_byte是这个最大值
 	1.btrfs_lookup_block_group找到包含search_start的block_group
@@ -8379,7 +8405,7 @@ halign=left</panel_attributes>
     <coordinates>
       <x>15480</x>
       <y>5480</y>
-      <w>30</w>
+      <w>40</w>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
@@ -18696,7 +18722,7 @@ halign=left</panel_attributes>
     <coordinates>
       <x>33790</x>
       <y>4120</y>
-      <w>90</w>
+      <w>100</w>
       <h>60</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
@@ -21840,7 +21866,7 @@ halign=left</panel_attributes>
     <panel_attributes>1.如果drop_cache置上，通过btrfs_drop_extent_cache释放inode中
 	start~end的em
 2.如果start超过了盘上的数据大小(disk_i_size),并且不用replace_extent
-	将modify_tree清掉
+	将modify_tree清掉(不用做cow)
 3.循环处理记录的BTRFS_EXTENT_DATA_KEY管理信息，将要删除的extent的管理信息删除
 	1.btrfs_lookup_file_extent寻找inode偏移为search_start的BTRFS_EXTENT_DATA_KEY
 	2.如果出错退出循环，如果返回1，在最开始搜寻时，调整slot
@@ -32372,14 +32398,14 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>23570</x>
+      <x>23560</x>
       <y>9420</y>
-      <w>280</w>
+      <w>290</w>
       <h>60</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 将delayed_node-&gt;del_root对应的item删除</panel_attributes>
-    <additional_attributes>60.0;10.0;200.0;40.0</additional_attributes>
+    <additional_attributes>70.0;10.0;210.0;40.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -32938,8 +32964,8 @@ halign=left</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>15890</x>
-      <y>10870</y>
+      <x>15080</x>
+      <y>12730</y>
       <w>180</w>
       <h>40</h>
     </coordinates>
@@ -32949,8 +32975,8 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>15970</x>
-      <y>10830</y>
+      <x>15160</x>
+      <y>12690</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -32960,8 +32986,8 @@ halign=left</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>15820</x>
-      <y>10940</y>
+      <x>15010</x>
+      <y>12800</y>
       <w>380</w>
       <h>80</h>
     </coordinates>
@@ -32975,8 +33001,8 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>15970</x>
-      <y>10900</y>
+      <x>15160</x>
+      <y>12760</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -32986,8 +33012,8 @@ halign=left</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>15940</x>
-      <y>11050</y>
+      <x>15130</x>
+      <y>12910</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -32997,8 +33023,8 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>15990</x>
-      <y>11010</y>
+      <x>15180</x>
+      <y>12870</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -33008,8 +33034,8 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>15990</x>
-      <y>11080</y>
+      <x>15180</x>
+      <y>12940</y>
       <w>30</w>
       <h>50</h>
     </coordinates>
@@ -33019,8 +33045,8 @@ halign=left</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>15830</x>
-      <y>11110</y>
+      <x>15020</x>
+      <y>12970</y>
       <w>420</w>
       <h>60</h>
     </coordinates>
@@ -33033,8 +33059,8 @@ halign=left</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>15860</x>
-      <y>11200</y>
+      <x>15050</x>
+      <y>13060</y>
       <w>200</w>
       <h>40</h>
     </coordinates>
@@ -33045,8 +33071,8 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>16120</x>
-      <y>11200</y>
+      <x>15310</x>
+      <y>13060</y>
       <w>150</w>
       <h>40</h>
     </coordinates>
@@ -33056,8 +33082,8 @@ valign=center</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>15950</x>
-      <y>11160</y>
+      <x>15140</x>
+      <y>13020</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -33067,8 +33093,8 @@ valign=center</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>16200</x>
-      <y>11160</y>
+      <x>15390</x>
+      <y>13020</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -33078,8 +33104,8 @@ valign=center</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>15760</x>
-      <y>11230</y>
+      <x>14950</x>
+      <y>13090</y>
       <w>210</w>
       <h>60</h>
     </coordinates>
@@ -33090,8 +33116,8 @@ btree_aops</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>15700</x>
-      <y>11270</y>
+      <x>14890</x>
+      <y>13130</y>
       <w>150</w>
       <h>40</h>
     </coordinates>
@@ -33101,8 +33127,8 @@ btree_aops</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>15590</x>
-      <y>11340</y>
+      <x>14780</x>
+      <y>13200</y>
       <w>320</w>
       <h>80</h>
     </coordinates>
@@ -33116,8 +33142,8 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>15760</x>
-      <y>11300</y>
+      <x>14950</x>
+      <y>13160</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -33127,8 +33153,8 @@ halign=left</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>15670</x>
-      <y>11450</y>
+      <x>14860</x>
+      <y>13310</y>
       <w>190</w>
       <h>40</h>
     </coordinates>
@@ -33138,8 +33164,8 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>15760</x>
-      <y>11410</y>
+      <x>14950</x>
+      <y>13270</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -33149,8 +33175,8 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>15760</x>
-      <y>11480</y>
+      <x>14950</x>
+      <y>13340</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -33160,8 +33186,8 @@ halign=left</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>15540</x>
-      <y>11520</y>
+      <x>14730</x>
+      <y>13380</y>
       <w>420</w>
       <h>260</h>
     </coordinates>
@@ -33172,8 +33198,8 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>16010</x>
-      <y>11230</y>
+      <x>15200</x>
+      <y>13090</y>
       <w>220</w>
       <h>60</h>
     </coordinates>
@@ -33184,8 +33210,8 @@ btrfs_aops</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>16150</x>
-      <y>11270</y>
+      <x>15340</x>
+      <y>13130</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -33195,8 +33221,8 @@ btrfs_aops</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>16200</x>
-      <y>11300</y>
+      <x>15390</x>
+      <y>13160</y>
       <w>130</w>
       <h>60</h>
     </coordinates>
@@ -33208,8 +33234,8 @@ btrfs_get_extent</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>16140</x>
-      <y>11340</y>
+      <x>15330</x>
+      <y>13200</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -33219,8 +33245,8 @@ btrfs_get_extent</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>16030</x>
-      <y>11400</y>
+      <x>15220</x>
+      <y>13260</y>
       <w>180</w>
       <h>40</h>
     </coordinates>
@@ -33230,8 +33256,8 @@ btrfs_get_extent</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>16330</x>
-      <y>11400</y>
+      <x>15520</x>
+      <y>13260</y>
       <w>150</w>
       <h>40</h>
     </coordinates>
@@ -33241,8 +33267,8 @@ btrfs_get_extent</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>16110</x>
-      <y>11370</y>
+      <x>15300</x>
+      <y>13230</y>
       <w>110</w>
       <h>50</h>
     </coordinates>
@@ -33252,8 +33278,8 @@ btrfs_get_extent</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>16220</x>
-      <y>11370</y>
+      <x>15410</x>
+      <y>13230</y>
       <w>220</w>
       <h>50</h>
     </coordinates>
@@ -33263,8 +33289,8 @@ btrfs_get_extent</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>15980</x>
-      <y>11480</y>
+      <x>15170</x>
+      <y>13340</y>
       <w>420</w>
       <h>490</h>
     </coordinates>
@@ -33304,8 +33330,8 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>16110</x>
-      <y>11430</y>
+      <x>15300</x>
+      <y>13290</y>
       <w>150</w>
       <h>70</h>
     </coordinates>
@@ -33317,8 +33343,8 @@ flush_write_bio</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>15910</x>
-      <y>10800</y>
+      <x>15100</x>
+      <y>12660</y>
       <w>140</w>
       <h>40</h>
     </coordinates>
@@ -33328,8 +33354,8 @@ flush_write_bio</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>15810</x>
-      <y>12020</y>
+      <x>14730</x>
+      <y>13920</y>
       <w>180</w>
       <h>40</h>
     </coordinates>
@@ -33339,8 +33365,8 @@ flush_write_bio</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>15760</x>
-      <y>12090</y>
+      <x>14680</x>
+      <y>13990</y>
       <w>240</w>
       <h>40</h>
     </coordinates>
@@ -33350,8 +33376,8 @@ flush_write_bio</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>15550</x>
-      <y>12150</y>
+      <x>14470</x>
+      <y>14050</y>
       <w>250</w>
       <h>140</h>
     </coordinates>
@@ -33369,8 +33395,8 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>15650</x>
-      <y>12120</y>
+      <x>14570</x>
+      <y>14020</y>
       <w>240</w>
       <h>50</h>
     </coordinates>
@@ -33381,8 +33407,8 @@ filter</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>15850</x>
-      <y>12150</y>
+      <x>14770</x>
+      <y>14050</y>
       <w>380</w>
       <h>290</h>
     </coordinates>
@@ -33409,8 +33435,8 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>15930</x>
-      <y>12120</y>
+      <x>14850</x>
+      <y>14020</y>
       <w>90</w>
       <h>50</h>
     </coordinates>
@@ -33420,8 +33446,8 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>15880</x>
-      <y>12050</y>
+      <x>14800</x>
+      <y>13950</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -33431,8 +33457,8 @@ halign=left</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>16350</x>
-      <y>12020</y>
+      <x>15270</x>
+      <y>13920</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -33442,8 +33468,8 @@ halign=left</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>16350</x>
-      <y>12090</y>
+      <x>15270</x>
+      <y>13990</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -33453,8 +33479,8 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>16410</x>
-      <y>12050</y>
+      <x>15330</x>
+      <y>13950</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -33464,8 +33490,8 @@ halign=left</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>16250</x>
-      <y>12160</y>
+      <x>15170</x>
+      <y>14060</y>
       <w>360</w>
       <h>220</h>
     </coordinates>
@@ -33488,8 +33514,8 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>16410</x>
-      <y>12120</y>
+      <x>15330</x>
+      <y>14020</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -33499,8 +33525,8 @@ halign=left</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>16680</x>
-      <y>12020</y>
+      <x>15600</x>
+      <y>13920</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
@@ -33511,8 +33537,8 @@ valign=center</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>16730</x>
-      <y>12050</y>
+      <x>15650</x>
+      <y>13950</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -33522,8 +33548,8 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>16680</x>
-      <y>12090</y>
+      <x>15600</x>
+      <y>13990</y>
       <w>120</w>
       <h>40</h>
     </coordinates>
@@ -33533,8 +33559,8 @@ valign=center</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>16730</x>
-      <y>12120</y>
+      <x>15650</x>
+      <y>14020</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -33544,8 +33570,8 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>16640</x>
-      <y>12160</y>
+      <x>15560</x>
+      <y>14060</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -33555,8 +33581,8 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>16440</x>
-      <y>11460</y>
+      <x>15630</x>
+      <y>13320</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -33566,8 +33592,8 @@ valign=center</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>16420</x>
-      <y>11430</y>
+      <x>15610</x>
+      <y>13290</y>
       <w>110</w>
       <h>50</h>
     </coordinates>
@@ -33577,8 +33603,8 @@ valign=center</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>16850</x>
-      <y>12080</y>
+      <x>15770</x>
+      <y>13980</y>
       <w>150</w>
       <h>40</h>
     </coordinates>
@@ -33588,8 +33614,8 @@ valign=center</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>16890</x>
-      <y>12010</y>
+      <x>15810</x>
+      <y>13910</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
@@ -33600,8 +33626,8 @@ valign=center</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>16930</x>
-      <y>12040</y>
+      <x>15850</x>
+      <y>13940</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -33611,8 +33637,8 @@ valign=center</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>16920</x>
-      <y>12110</y>
+      <x>15840</x>
+      <y>14010</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -33622,8 +33648,8 @@ valign=center</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>16810</x>
-      <y>12150</y>
+      <x>15730</x>
+      <y>14050</y>
       <w>320</w>
       <h>240</h>
     </coordinates>
@@ -33635,16 +33661,17 @@ valign=center</panel_attributes>
 3.如果到达了inode的最后一个页面
 	1.将inode.i_size之外的空间清0
 4.set_page_extent_mapped设置page private
-5.writepage_delalloc
-6.
+5.writepage_delalloc对delalloc的数据进行cow
+	如果返回1，表示page已经被写到磁盘的buffer，跳到done_unlocked
+6.__extent_writepage_io
 halign=left</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>16740</x>
-      <y>12420</y>
+      <x>15660</x>
+      <y>14320</y>
       <w>130</w>
       <h>40</h>
     </coordinates>
@@ -33654,23 +33681,31 @@ halign=left</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>16620</x>
-      <y>12490</y>
+      <x>15540</x>
+      <y>14390</y>
       <w>340</w>
-      <h>190</h>
+      <h>210</h>
     </coordinates>
     <panel_attributes>1.如果extent_locked置上，或者没有tree.ops-&gt;fill_delalloc
 	直接返回0
 2.最多只能申请一个页面，循环申请空间
-	1.find_lock_delalloc_range
+	1.find_lock_delalloc_range查找被dealloc的段并lock，返回在io_tree中段的数目
+	2.如果没找到，调整delalloc_start(从之前的delalloc_end开始)重新查找
+	3.tree-&gt;ops-&gt;fill_delalloc对delalloc的段做cow(分配新的extent)
+	4.更新变量delalloc_to_write，delalloc_start
+3.更新wbc-&gt;nr_to_write
+	1.如果delalloc_to_write超过了16k，不能超过8k
+	2.否则不能超过delalloc_to_write
+4.如果将数据写入inode，递减wbc-&gt;nr_to_write，并返回1
+5.否则返回0
 halign=left</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>16800</x>
-      <y>12450</y>
+      <x>15720</x>
+      <y>14350</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -33680,8 +33715,8 @@ halign=left</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>16540</x>
-      <y>12710</y>
+      <x>15460</x>
+      <y>14650</y>
       <w>180</w>
       <h>40</h>
     </coordinates>
@@ -33691,21 +33726,21 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>16630</x>
-      <y>12670</y>
+      <x>15550</x>
+      <y>14590</y>
       <w>30</w>
-      <h>60</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=.&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>16460</x>
-      <y>12780</y>
-      <w>350</w>
-      <h>260</h>
+      <x>15380</x>
+      <y>14730</y>
+      <w>380</w>
+      <h>340</h>
     </coordinates>
     <panel_attributes>1.again
 	1.find_delalloc_range寻找io_tree中被标记为delalloc，并且
@@ -33716,26 +33751,37 @@ halign=left</panel_attributes>
 	3.如果找到的delalloc_start低于start
 		delalloc_start = *start
 	4.如果找到的长度超过了max_bytes，调整delalloc_end到长度为max_bytes
-2.lock_delalloc_pages
+2.lock_delalloc_pages将delalloc_start~delalloc_end范围内的page lock
+3.如果返回EAGAIN
+	1.free_extent_state释放cache_state
+		cached_state = NULL
+	2.如果loop没置上，将其置上，跳到again
+		max_bytes = PAGE_CACHE_SIZE
+	3.否则将found置0，跳到out_failed
+4.lock_extent_bits将io_tree中的delalloc_start~delalloc_end设置EXTENT_LOCKED
+5.test_range_bit检查该段的EXTENT_DELALLOC是否置上
+	1.如果没置上，将extent_locked和page_lock清除
+	2.然后跳到again
+6.返回段的范围，及在io_tree中段的数量
 halign=left</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>16620</x>
-      <y>12740</y>
+      <x>15540</x>
+      <y>14680</y>
       <w>30</w>
-      <h>60</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=.&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>16480</x>
-      <y>13070</y>
+      <x>15320</x>
+      <y>15110</y>
       <w>150</w>
       <h>40</h>
     </coordinates>
@@ -33745,19 +33791,19 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>16540</x>
-      <y>13030</y>
+      <x>15380</x>
+      <y>15060</y>
       <w>30</w>
-      <h>60</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=.&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>16420</x>
-      <y>13140</y>
+      <x>15260</x>
+      <y>15180</y>
       <w>320</w>
       <h>380</h>
     </coordinates>
@@ -33790,8 +33836,8 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>16540</x>
-      <y>13100</y>
+      <x>15380</x>
+      <y>15140</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -33801,8 +33847,8 @@ halign=left</panel_attributes>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>16800</x>
-      <y>13070</y>
+      <x>15640</x>
+      <y>15110</y>
       <w>150</w>
       <h>40</h>
     </coordinates>
@@ -33812,22 +33858,34 @@ halign=left</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>16760</x>
-      <y>13140</y>
+      <x>15600</x>
+      <y>15180</y>
       <w>410</w>
-      <h>360</h>
+      <h>250</h>
     </coordinates>
     <panel_attributes>1.如果delalloc的段就是当前locked_page，直接返回0
 2.遍历delalloc的page
-	1.find_get_pages_contig
+	1.find_get_pages_contig查找page_tree中page,直到全部找到，或者检查到hole
+	2.如果没找到，返回EAGAIN，跳到done
+	3.遍历所有找到的page
+		1.如果不是locked_page
+			1.lock_page
+			2.如果page没有dirty或者不在inode内，返回EAGAIN，跳到done
+		2.记录所有被locked的page(pages_locked)
+	4.更新还要被locked的page
+		nrpages -= ret;
+		index += ret;
+3.done：
+	1.如果出错，并且有page被locked，__unlock_for_delalloc将被locked的page解锁
+	2.返回
 halign=left</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>16750</x>
-      <y>13530</y>
+      <x>15750</x>
+      <y>15460</y>
       <w>160</w>
       <h>40</h>
     </coordinates>
@@ -33837,8 +33895,1907 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
+      <x>15820</x>
+      <y>15420</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>15640</x>
+      <y>15530</y>
+      <w>390</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>1.如果不用找page(!nr_pages)，返回0
+2.radix_tree_for_each_contig遍历mapping-&gt;page_tree
+	直到检查到hole()
+	1.filter
+		1.如果没找到page，退出循环
+		2.如果radix_tree_exception
+			1.如果radix_tree_deref_retry，跳到2重新遍历
+			2.否则退出循环
+		3.如果不能page_cache_get_speculative，退出循环
+		4.如果page不在slot，跳到2重新遍历
+		5.如果page.mapping不存在，或者其index不同，退出循环
+	2.获取page,如果达到了nr_pages，退出循环
+		pages[ret++] = page;
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>15810</x>
+      <y>15490</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>15720</x>
+      <y>15140</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>15690</x>
+      <y>15060</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>16220</x>
+      <y>14660</y>
+      <w>180</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>tree-&gt;ops-&gt;fill_delalloc
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>16300</x>
+      <y>14690</y>
+      <w>150</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+btrfs_extent_io_ops</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>16140</x>
+      <y>14800</y>
+      <w>400</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>1.run_delalloc_nocow申请ordered，em(段内没有csum可以不做cow)
+	BTRFS_INODE_NODATACOW(没有defrag)，force置上
+	BTRFS_INODE_PREALLOC（没有defrag），force不置
+注：inline不用申请，直接将数据填入extent_data_key
+2.如果不用inode_need_compress，通过cow_file_range段段进行cow
+注：这里无论如何都会重新分配extent(不管这个段是否在inode的范围内)
+3.否则
+	1.将inode.runtime_flags的BTRFS_INODE_HAS_ASYNC_EXTENT置上
+	2.cow_file_range_async进行异步的cow
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>16230</x>
+      <y>14730</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>run_delalloc_range</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>16300</x>
+      <y>14760</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>15950</x>
+      <y>14970</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>need_force_cow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>15990</x>
+      <y>14950</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>16000</x>
+      <y>15000</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>15930</x>
+      <y>15040</y>
+      <w>310</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>1.BTRFS_INODE_NODATACOW或者BTRFS_INODE_PREALLOC至少有一个置上
+2.存在inode.defrag_bytes，并且io_tree中段的EXTENT_DEFRAG置上
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>16290</x>
+      <y>14970</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>inode_need_compress</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>16360</x>
+      <y>14950</y>
+      <w>50</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>30.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>16350</x>
+      <y>15000</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>16250</x>
+      <y>15040</y>
+      <w>290</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>1.需要compress，返回1
+	1.root的FORCE_COMPRESS置上
+	2.root的COMPRESS置上
+	3.inode的BTRFS_INODE_COMPRESS置上
+	4.inode的force_compress置上
+2.其他情况返回0 （inode的BTRFS_INODE_NOCOMPRESS置上）
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>16640</x>
+      <y>14970</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>run_delalloc_nocow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>17830</x>
+      <y>14980</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>cow_file_range</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>18470</x>
+      <y>14990</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>cow_file_range_async</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>16550</x>
+      <y>15040</y>
+      <w>360</w>
+      <h>780</h>
+    </coordinates>
+    <panel_attributes>1.如果没申请到path，通过extent_clear_unlock_delalloc清除段的状态
+2.如果不是free_space_ino --&gt;btrfs_join_transaction_nolock
+	否则使用btrfs_join_transaction
+3.trans-&gt;block_rsv=fs_info-&gt;delalloc_block_rsv
+4.循环
+	1.btrfs_lookup_file_extent查找指向ino，偏移为cur_offset的extent_data
+	2.如果出错，跳到error，如果返回1，如果slot-1满足条件，调整slot
+	3.将check_prev清掉
+	4.next_slot
+		1.如果slot到达了nritems，通过btrfs_next_leaf遍历下一个slot
+		2.获取slot的key
+			1.objectid不能超过ino
+			2.如果低于BTRFS_EXTENT_DATA_KEY，slot++，跳到next_slot
+			3.如果高于cur_offset,跳到out_check
+				extent_end = found_key.offset
+	5.如果完全满足要求，通过btrfs_file_extent_item解析
+		1.如果fi.type是BTRFS_FILE_EXTENT_REG或者BTRFS_FILE_EXTENT_PREALLOC
+			1.filter
+				1.如果extend_end低于start，slot++,跳到next_slot
+				2.跳到out_check
+					1.disk_bytenr为0
+					2.compression
+					3.encryption
+					4.other_encoding
+					5.如果是BTRFS_FILE_EXTENT_REG，但是不需要force
+					6.btrfs_extent_readonly
+					7.btrfs_cross_ref_exist
+			2.计算在磁盘上的偏移disk_bytenr，和其长度num_bytes
+			注：extent_offset表示found_key.offset相对disk_bytenr的偏移(在磁盘上的偏移)
+				cur_offset - found_key.offset表示要找的段相对于found_key的偏移
+			3.如果有lock，通过btrfs_start_write_no_snapshoting，如果返回0，跳到out_check
+			4.csum_exist_in_range查找要映射的段内是否有csum，如果存在，跳到out_check
+			5.置上nocow(只有在包含要写文件，并且没有csum时，才不用cow)
+		2.如果是BTRFS_FILE_EXTENT_INLINE，确定extent_end（extent_data_item end）
+	6.out_check
+		1.如果需要cow，cow_file_range对段做cow(也添加了ordered IO)
+		2.如果不需要，只是添加ordered
+5.如果段没遍历完，将其做cow（重新分配extent）
+	cow_start = cur_offset;
+	cur_offset = end;
+6.将还没cow的段，通过cow_file_range做cow
+注：1.如果是inline，直接插入到extent_data中(cow)
+	2.如果不是，删除原有的em，重新申请em，并申请ordered IO
+7.error
+	1.btrfs_end_transaction
+	2.如果出错，并且段没遍历完
+		1.extent_clear_unlock_delalloc
+	3.释放path，并返回
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>16700</x>
+      <y>15000</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>16340</x>
+      <y>15850</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>extent_clear_unlock_delalloc</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>16420</x>
+      <y>15810</y>
+      <w>200</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>16230</x>
+      <y>15920</y>
+      <w>380</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>1.clear_extent_bit将段的bits清除
+2.如果不存在page_ops，返回0
+3.如果page_ops的PAGE_SET_ERROR置上，并且有page
+	将inode.i_mapping的AS_EIO置上
+4.遍历nr_pages
+	1.find_get_pages_contig查找段内的page，遇到hole停止
+	2.遍历page
+		1.page_ops的PAGE_SET_PRIVATE2置上，SetPagePrivate2
+		2.跳到locked_page
+		3.PAGE_CLEAR_DIRTY--&gt;clear_page_dirty_for_io
+		4.PAGE_SET_WRITEBACK--&gt;set_page_writeback
+		5.PAGE_SET_ERROR--&gt;SetPageError
+		6.PAGE_END_WRITEBACK--&gt;end_page_writeback
+		7.PAGE_UNLOCK--&gt;unlock_page
+	3.继续遍历
+		nr_pages -= ret;
+		index += ret;
+5.返回0
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>16400</x>
+      <y>15880</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>16720</x>
+      <y>15860</y>
+      <w>230</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>btrfs_start_write_no_snapshoting</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>16640</x>
+      <y>15930</y>
+      <w>430</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>1.如果root-&gt;will_be_snapshoted，返回0
+2.递增root-&gt;subv_writers-&gt;counter
+3.再次检查will_be_snapshoted，如果置上
+	1.通过btrfs_end_write_no_snapshoting递减root-&gt;subv_writers-&gt;counter
+		并唤醒root-&gt;subv_writers-&gt;wait
+	2.返回0
+4.否则返回1
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>16830</x>
+      <y>15810</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
       <x>16820</x>
-      <y>13490</y>
+      <y>15890</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>17170</x>
+      <y>15840</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>out_check
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>17220</x>
+      <y>15870</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>17090</x>
+      <y>15910</y>
+      <w>400</w>
+      <h>630</h>
+    </coordinates>
+    <panel_attributes>1.如果这个extent_data低于要找的start，递增slot，并跳到next_slot
+2.如果需要cow
+	1.如果没指定cow_start，将其赋为cur_offset
+	2.调整cur_offset
+		cur_offset = extent_end
+	3.如果超过了end，退出循环
+	4.否则递增slot，跳到next_slot
+3.如果nocow
+	1.如果有cow_start，将之前的cow_start先cow
+		1.cow_file_range先将cow_start~found_key进行cow
+		2.cow_start = (u64)-1
+	2.如果extent_data的type是BTRFS_FILE_EXTENT_PREALLOC
+		1.alloc_extent_map申请em
+			em-&gt;start = cur_offset;
+			em-&gt;orig_start = found_key.offset - extent_offset;
+			em-&gt;len = num_bytes;
+			em-&gt;block_len = num_bytes;
+			em-&gt;block_start = disk_bytenr;
+			em-&gt;orig_block_len = disk_num_bytes;
+			em-&gt;ram_bytes = ram_bytes;
+			em-&gt;bdev = root-&gt;fs_info-&gt;fs_devices-&gt;latest_bdev;
+			em-&gt;mod_start = em-&gt;start;
+			em-&gt;mod_len = em-&gt;len;
+			set_bit(EXTENT_FLAG_PINNED, &amp;em-&gt;flags);
+			set_bit(EXTENT_FLAG_FILLING, &amp;em-&gt;flags);
+			em-&gt;generation = -1;
+		2.循环直到通过add_extent_mapping将em加入em_tree
+		3.type = BTRFS_ORDERED_PREALLOC
+	3.否则
+		type = BTRFS_ORDERED_NOCOW
+4.btrfs_add_ordered_extent将map的extent信息加入到ordered_tree中
+注：extent_data_key中存储的是以inode为主体的硬盘的使用情况
+	extent_item_key存储的是以extent为主体的，inode对extent的引用
+	ordered_tree中存储的是需要刷写的extent
+5.如果inode.root是BTRFS_DATA_RELOC_TREE_OBJECTID
+	通过btrfs_reloc_clone_csums将reloc_csum链入到ordered中
+6.extent_clear_unlock_delalloc清掉extent lock，并置上page flag
+7.更新offset
+	cur_offset = extent_end
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>16890</x>
+      <y>16570</y>
+      <w>190</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>btrfs_add_ordered_extent</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>16970</x>
+      <y>16530</y>
+      <w>170</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>16970</x>
+      <y>16600</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>16850</x>
+      <y>16640</y>
+      <w>190</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>__btrfs_add_ordered_extent</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>16960</x>
+      <y>16670</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>16820</x>
+      <y>16710</y>
+      <w>420</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>1.申请btrfs_ordered_extent_cache，并初始化
+	entry-&gt;file_offset = file_offset;
+	entry-&gt;start = start;
+	entry-&gt;len = len;
+	entry-&gt;disk_len = disk_len;
+	entry-&gt;bytes_left = len;
+	entry-&gt;inode = igrab(inode);
+	entry-&gt;compress_type = compress_type;
+	entry-&gt;truncated_len = (u64)-1;
+2.entry.flags
+	1.如果type不是BTRFS_ORDERED_IO_DONE BTRFS_ORDERED_COMPLETE
+		直接设置
+	2.如果dio置上，将BTRFS_ORDERED_DIRECT置上
+3.初始化entry的链表
+4.tree_insert插入inode.ordered_tree中
+5.将entry.root_extent_list加入到root-&gt;ordered_extents后面
+	1.root-&gt;nr_ordered_extents++
+	2.如果root只有这一个order_extent,将root-&gt;ordered_roo加入到fs_info.ordered_roots中
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>17310</x>
+      <y>16580</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>btrfs_reloc_clone_csums</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>17400</x>
+      <y>16530</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>17400</x>
+      <y>16610</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>17270</x>
+      <y>16650</y>
+      <w>360</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>1.btrfs_lookup_ordered_extent在inode.ordered_tree中查找
+	file_pos对应的ordered
+2.btrfs_lookup_csums_range查找盘上段内的csum段
+注:index_cnt在create_reloc_inode中被赋值为block_group的偏移
+3.如果该段内存在csum
+	1.将sums脱链
+	2.算出sums在ordered中的偏移
+		sums-&gt;bytenr = new_bytenr
+	3.btrfs_add_ordered_sum将sums链入到ordered.list链表中
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1880</x>
+      <y>1500</y>
+      <w>10</w>
+      <h>0</h>
+    </coordinates>
+    <panel_attributes>btrfs_add_inode_defrag</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1870</x>
+      <y>1530</y>
+      <w>10</w>
+      <h>0</h>
+    </coordinates>
+    <panel_attributes>__need_auto_defrag</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1860</x>
+      <y>1540</y>
+      <w>20</w>
+      <h>0</h>
+    </coordinates>
+    <panel_attributes>1.返回0
+	1.root的AUTO_DEFRAG没置上
+	2.btrfs_fs_closing
+2.否则返回1
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1910</x>
+      <y>1500</y>
+      <w>10</w>
+      <h>0</h>
+    </coordinates>
+    <panel_attributes>cow_file_range_inline</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1900</x>
+      <y>1550</y>
+      <w>10</w>
+      <h>0</h>
+    </coordinates>
+    <panel_attributes>insert_inline_extent</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>1960</x>
+      <y>1500</y>
+      <w>20</w>
+      <h>0</h>
+    </coordinates>
+    <panel_attributes>get_extent_allocation_hint</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1950</x>
+      <y>1510</y>
+      <w>30</w>
+      <h>0</h>
+    </coordinates>
+    <panel_attributes>1.search_extent_mapping查找段对应的em
+2.如果找到
+	1.默认使用em.block_start作为hint，
+	2.如果block_start无效，查找first_block.block_start
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>17710</x>
+      <y>15050</y>
+      <w>440</w>
+      <h>630</h>
+    </coordinates>
+    <panel_attributes>1.如果是btrfs_is_free_space_inode，返回EINVAL
+2.如果cow的长度小于64k，并且要写的范围在disk_i_size范围内
+	通过btrfs_add_inode_defrag申请defrag加入红黑树fs_info-&gt;defrag_inodes中
+3.如果start为0
+	1.cow_file_range_inline将start~end段进行cow(__btrfs_drop_extents中在search_slot
+		的时候会将cow置上)
+	2.如果正确返回
+		1.extent_clear_unlock_delalloc将段的lock去掉，并且置上page的flag
+		2.更新nr_written，置上page_started，跳到out
+	3.如果出错，跳到out_unlock
+4.get_extent_allocation_hint获取extent在block的最小位置
+5.btrfs_drop_extent_cache删除段在inode中的em
+6.循环获取disk_num_bytes大小的extent
+	1.btrfs_reserve_extent从block_group中获取extent
+	2.alloc_extent_map申请em，并初始化
+		em-&gt;start = start;
+		em-&gt;orig_start = em-&gt;start;//orig_start为disk_bytenr在file中的偏移
+		ram_size = ins.offset;
+		em-&gt;len = ins.offset;
+		em-&gt;mod_start = em-&gt;start;
+		em-&gt;mod_len = em-&gt;len;
+		em-&gt;block_start = ins.objectid;
+		em-&gt;block_len = ins.offset;
+		em-&gt;orig_block_len = ins.offset;
+		em-&gt;ram_bytes = ram_size;
+		em-&gt;bdev = root-&gt;fs_info-&gt;fs_devices-&gt;latest_bdev;
+		set_bit(EXTENT_FLAG_PINNED, &amp;em-&gt;flags);
+		em-&gt;generation = -1;
+	3.循环通过add_extent_mapping将em加入到inode.extent_tree中，直到成功
+	4.btrfs_add_ordered_extent向inode.ordered_tree中添加需要io的段
+	5.如果在BTRFS_DATA_RELOC_TREE_OBJECTID中，需要通过btrfs_reloc_clone_csums
+	6.如果申请的空间超过了disk_num_bytes，退出循环
+	7.extent_clear_unlock_delalloc解锁extent，并置上page的flag
+	8.更新循环变量
+		disk_num_bytes -= cur_alloc_size;
+		num_bytes -= cur_alloc_size;
+		alloc_hint = ins.objectid + ins.offset;
+		start += cur_alloc_size;
+注：如果不是inline，这里并没有添加extent_data，extent_data是在btrfs_finish_ordered_io
+	中完成的
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>17660</x>
+      <y>15720</y>
+      <w>180</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>btrfs_add_inode_defrag</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>17730</x>
+      <y>15670</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>17730</x>
+      <y>15750</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>17580</x>
+      <y>15790</y>
+      <w>390</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>1.如果不用__need_auto_defrag，返回0
+2.如果inode.runtime_flags的BTRFS_INODE_IN_DEFRAG置上，返回0
+3.申请btrfs_inode_defrag_cachep
+	defrag-&gt;ino = btrfs_ino(inode);
+	defrag-&gt;transid = transid;
+	defrag-&gt;root = root-&gt;root_key.objectid;
+4.如果inode.runtime_flags的BTRFS_INODE_IN_DEFRAG没置上
+	通过__btrfs_add_inode_defrag插入到红黑树fs_info-&gt;defrag_inodes中
+5.否则释放defrag
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>17590</x>
+      <y>15990</y>
+      <w>140</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>__need_auto_defrag</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>17660</x>
+      <y>15940</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>17640</x>
+      <y>16020</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>17530</x>
+      <y>16060</y>
+      <w>220</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>1.返回0
+	1.root的AUTO_DEFRAG没置上
+	2.btrfs_fs_closing
+2.否则返回1
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>18000</x>
+      <y>15720</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>cow_file_range_inline</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>18080</x>
+      <y>15670</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>18070</x>
+      <y>15750</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>17980</x>
+      <y>15790</y>
+      <w>370</w>
+      <h>380</h>
+    </coordinates>
+    <panel_attributes>1.默认data_len为在start~end中在i_size范围内的长度
+	如果存在compressed_size，则为compressed_size
+2.以下条件直接返回1，不做处理
+	1.start不为0
+	2.actual_end超过1页
+	3.datalen超过node_size
+	4.在没有compressed_size的情况下，actual_end按sectorsize对齐
+	5.end没超过i_size
+	6.data_len超过了max_inline
+3.btrfs_alloc_path
+4.btrfs_join_transaction
+	trans-&gt;block_rsv = &amp;root-&gt;fs_info-&gt;delalloc_block_rsv
+5.确定extent_item_size
+6.__btrfs_drop_extents删除start~aligned_end对应的extent_data
+	并通过尝试插入一个extent_item_size的extent_data
+注：在__btrfs_drop_extents中有通过inode_sub_bytes更改i_blocks i_bytes
+7.insert_inline_extent填充其extet_data_key的数据(inline数据在这个key对应的buffer)
+8.将inode.runtime_flags的BTRFS_INODE_NEEDS_FULL_SYNC置上
+9.btrfs_delalloc_release_metadata释放reserve meta
+10.btrfs_drop_extent_cache将start~aligned_end对应的em删除
+11.out
+	1.btrfs_qgroup_free_data
+	2.释放path，btrfs_end_transaction，并返回
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>17910</x>
+      <y>16210</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>insert_inline_extent</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>18000</x>
+      <y>16160</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>17970</x>
+      <y>16240</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>17810</x>
+      <y>16280</y>
+      <w>400</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>1.cur_size默认是size，如果有compressed_size，将其更新为这个size
+2.inode_add_bytes递增inode.i_bytes i_blocks
+3.如果之前没有插入item(!extent_inserted),通过btrfs_insert_empty_item
+	插入BTRFS_EXTENT_DATA_KEY
+4.以btrfs_file_extent_item方式解析slot数据
+	1.填充fi.gen type encryption other_encoding ram_bytes
+	2.inline要将数据写入extent_data_key中，并设置extent_compression
+		1.如果是compress，循环将compressed_pages中的数据写入到extent中
+		2.否则将start对应的page写入到extent中(inline要在1页之内)
+	3.标记leaf dirty
+5.btrfs_update_inode更新inode
+	BTRFS_I(inode)-&gt;disk_i_size = inode-&gt;i_size
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>18460</x>
+      <y>15710</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>get_extent_allocation_hint</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>18390</x>
+      <y>15780</y>
+      <w>320</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>1.search_extent_mapping查找段对应的em
+2.如果找到
+	1.默认使用em.block_start作为hint，
+	2.如果block_start无效，查找first_block.block_start
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>18560</x>
+      <y>15740</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>17880</x>
+      <y>15010</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>18100</x>
+      <y>15670</y>
+      <w>450</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;430.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>16870</x>
+      <y>15810</y>
+      <w>360</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;340.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>16490</x>
+      <y>14950</y>
+      <w>250</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;230.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>18360</x>
+      <y>15060</y>
+      <w>450</w>
+      <h>400</h>
+    </coordinates>
+    <panel_attributes>1.clear_extent_bit将inode.io_tree的start~end的EXTENT_LOCKED清掉
+2.遍历整个段
+	1.申请async_cow
+		1.初始化
+			async_cow-&gt;inode = igrab(inode);
+			async_cow-&gt;root = root;
+			async_cow-&gt;locked_page = locked_page;
+			async_cow-&gt;start = start;
+		2.如果inode.flag的BTRFS_INODE_NOCOMPRESS置上，并且root的FORCE_COMPRESS没置
+			cur_end = end
+			否则如果要compress，其大小不能超过512K
+		async_cow-&gt;end = cur_end
+	2.btrfs_init_work初始化async_cow-&gt;work
+		work-&gt;func = async_cow_start;
+		work-&gt;ordered_func = async_cow_submit;
+		work-&gt;ordered_free = async_cow_free;
+	3.计算段的page大小nr_pages,并加到fs_info-&gt;async_delalloc_pages
+	4.将async_cow加入到fs_info-&gt;delalloc_workers
+	5.如果async_delalloc_pages超过10M,等待其减少至limit
+	6.循环等待async_delalloc_pages变为0(在async_submit_draining的情况下)
+	7.更新循环变量
+		nr_written += nr_pages;
+		start = cur_end + 1;
+3.置上page_start，并返回0
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>18540</x>
+      <y>15020</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>16500</x>
+      <y>14950</y>
+      <w>1420</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;1400.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>16510</x>
+      <y>14950</y>
+      <w>2060</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;2040.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>15800</x>
+      <y>14590</y>
+      <w>490</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;470.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>19120</x>
+      <y>14330</y>
+      <w>180</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>__extent_writepage_io</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>19030</x>
+      <y>14400</y>
+      <w>360</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>1.tree-&gt;ops-&gt;writepage_start_hook如果在page状态不对，将其加到队列处理
+	如果状态不对
+	1.如果返回EBUSY，queue会处理
+		wbc-&gt;pages_skipped++
+	2.否则redirty_page_for_writepage
+	3.update_nr_written更新nr_to_write writeback_index，忽略此次的更新
+	4.跳到done_unlocked，返回1
+2.update_nr_written更新nr_to_write writeback_index
+3.如果写的pag额超过了inode.i_size,tree-&gt;ops-&gt;writepage_end_io_hook
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>19210</x>
+      <y>14360</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>18910</x>
+      <y>14650</y>
+      <w>240</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>tree-&gt;ops-&gt;writepage_start_hook
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>19030</x>
+      <y>14610</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>19010</x>
+      <y>14680</y>
+      <w>150</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+btrfs_extent_io_ops</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>18950</x>
+      <y>14720</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>btrfs_writepage_start_hook</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>19030</x>
+      <y>14750</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>18890</x>
+      <y>14790</y>
+      <w>340</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>1.如果PagePrivate2置上，返回0
+2.如果正在PageChecked,返回EAGAIN
+3.SetPageChecked
+4.初始化fixup-&gt;work(btrfs_writepage_fixup_worker)
+	fixup-&gt;page = page
+5.返回EBUSY
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>18970</x>
+      <y>14930</y>
+      <w>210</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>btrfs_writepage_fixup_worker</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>19050</x>
+      <y>14890</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>19070</x>
+      <y>14960</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>18890</x>
+      <y>15000</y>
+      <w>410</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>1.获取fixup page
+2.如果page.mapping不存在， page没有dirty，page不在checked
+	跳到out_page
+3.lock_extent_bits在inode中将page锁住
+4.如果PagePrivate2，跳到out
+5.btrfs_lookup_ordered_extent在ordered_tree中查找page
+	如果找到
+	1.btrfs_start_ordered_extent刷写ordered，并等待page刷写完成
+	2.btrfs_put_ordered_extent将ordered释放，并跳到again
+6.如果没找到
+	1.btrfs_delalloc_reserve_space
+	2.btrfs_set_extent_delalloc将该段设置为delalloc
+	3.ClearPageChecked，并且set_page_dirty
+7.out:解锁，并且释放fixup
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>19240</x>
+      <y>14650</y>
+      <w>240</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>tree-&gt;ops-&gt;writepage_end_io_hook
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>19330</x>
+      <y>14610</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>19340</x>
+      <y>14680</y>
+      <w>150</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+btrfs_extent_io_ops</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>19290</x>
+      <y>14720</y>
+      <w>210</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>btrfs_writepage_end_io_hook</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>19300</x>
+      <y>14790</y>
+      <w>360</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>1.ClearPagePrivate2
+2.btrfs_dec_test_ordered_pending检查段没被IO完成，返回0
+3.如果段被IO完成
+	1.初始化ordered_extent-&gt;work(finish_ordered_fn)
+	2.根据是否是free_space_inode将其加入到
+	endio_freespace_worker/endio_write_workers队列
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>19420</x>
+      <y>14750</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>19320</x>
+      <y>14930</y>
+      <w>230</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>btrfs_dec_test_ordered_pending</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>19420</x>
+      <y>14890</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>19420</x>
+      <y>14960</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>19310</x>
+      <y>15000</y>
+      <w>360</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>1.如果有cached，不需要查找跳到have_entry
+	否则tree_search在inode.order_tree中查找file_offset
+2.have_entry
+	1.如果offset不在entry的范围内，返回1
+	2.如果需要的io_size超过了entry.bytes_left,报错
+	3.entry-&gt;bytes_left -= io_size
+	4.如果extent没有uptodate，将entry的BTRFS_ORDERED_IOERR置上
+	5.如果没有bytes_left
+		1.将entry的BTRFS_ORDERED_IO_DONE置上
+		注：只有此次entry被完全IO_DONE，才返回0
+		2.如果存在entry.wait，唤醒entry.wait
+	6.否则直接返回1
+3.out
+	1.如果entry被完全IO_DONE，缓存entry，并递增其ref
+	2.如果此次检查被完全IO_DONE，返回1
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>19710</x>
+      <y>14930</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>finish_ordered_fn</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>19690</x>
+      <y>15000</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>btrfs_finish_ordered_io</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>19570</x>
+      <y>14890</y>
+      <w>220</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;200.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>19760</x>
+      <y>14960</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>19770</x>
+      <y>15030</y>
+      <w>260</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+如果没有cow，更新inode_item后退出</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>19680</x>
+      <y>15070</y>
+      <w>440</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>1.如果是btrfs_is_free_space_inode，就nolock
+2.如果BTRFS_ORDERED_IOERR置上，返回EIO
+3.btrfs_free_io_failure_record将io_failure_tree中之前错误的段删除
+4.如果ordered的BTRFS_ORDERED_TRUNCATED置上
+	1.将truncated置上
+	2.logical_len设置为truncated_len，如果为0，跳到out
+5.如果ordered的BTRFS_ORDERED_NOCOW置上
+	1.btrfs_qgroup_free_data将ordered释放
+	2.btrfs_ordered_update_i_size更新disk_i_size
+	3.btrfs_join_transaction
+		trans-&gt;block_rsv = &amp;root-&gt;fs_info-&gt;delalloc_block_rsv
+	4.btrfs_update_inode_fallback更新inode
+	5.跳到out
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>19580</x>
+      <y>15370</y>
+      <w>210</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>btrfs_free_io_failure_record</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>19670</x>
+      <y>15400</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>19510</x>
+      <y>15440</y>
+      <w>370</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>1.find_first_extent_bit_state在io_failure_tree中查找start对应
+	EXTENT_DIRTY置上的state
+2.循环处理释放state
+	1.如果state超过了end，退出循环
+	2.通过next_state获取next
+	3.将state.private对应的failrec释放，并释放state
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>19980</x>
+      <y>15370</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>btrfs_ordered_update_i_size</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>19900</x>
+      <y>15440</y>
+      <w>410</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>1.获取要处理的offset
+	1.如果指定了ordered，offset是ordered的end
+	2.否则为指定的offset对sectorsize取整
+2.如果disk_i_size超过i_size,返回0
+	BTRFS_I(inode)-&gt;disk_i_size = i_size
+3.如果disk_i_size和i_size相同，返回1
+4.如果处理的offset在disk_i_size范围内，并且outstanding_isize在disk_i_size
+	范围内，返回1
+5.找到offset或者ordered之前的prev
+6.向前遍历红黑树链表，如果之前还有超过disk_i_size的test，将update转换到test
+	1.如果test的BTRFS_ORDERED_UPDATED_ISIZE置上，不做处理
+	2.如果test在disk_i_size范围内，退出循环
+	3.如果test完全不在inode的范围内，退出循环
+	4.如果test部分在disk_i_size范围内
+		1.更新test-&gt;outstanding_isize(offset ordered-&gt;outstanding_isize)
+		2.跳到out，暂时不做处理
+7.如果之前没有超过disk_i_size的ordered，调整disk_i_size到offset
+	或者outstanding_isize，并返回0
+8.out
+	1.如果有ordered，标记ordered已经被BTRFS_ORDERED_UPDATED_ISIZE
+	2.返回
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>20070</x>
+      <y>15400</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>20410</x>
+      <y>15050</y>
+      <w>510</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>6.lock_extent_bits锁住ordered对应的段
+7.test_range_bit查看ordered对应的段是否完全将EXTENT_DEFRAG置上
+	1.如果完全置上，通过clear_extent_bit将该段的EXTENT_DEFRAG清掉
+8.btrfs_join_transaction
+	trans-&gt;block_rsv = &amp;root-&gt;fs_info-&gt;delalloc_block_rsv
+9.BTRFS_ORDERED_COMPRESSED --&gt;compress_type
+10.如果ordered的BTRFS_ORDERED_PREALLOC置上，通过btrfs_mark_extent_written
+	将ordered对应的extent_data更改为BTRFS_FILE_EXTENT_REG
+11.否则，通过insert_reserved_file_extent
+注：在cow_file_range中ordered_extent-&gt;start存储的是extent的硬盘偏移
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>20530</x>
+      <y>15350</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>btrfs_mark_extent_written</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>20330</x>
+      <y>15420</y>
+      <w>370</w>
+      <h>470</h>
+    </coordinates>
+    <panel_attributes>1.btrfs_search_slot查找ino段对应的extent_data,根据返回
+	调整slot
+2.如果start=offset,end&lt;extent_end
+	1.extent_mergeable查看前一个slot是否合并,如果能合并
+		1.将path改成end~extent_end
+			1.更新path的key
+				new_key.offset = end
+			2.更改extent_data 
+				fi.generation=transid
+				fi.nem_bytes=extent_end-end
+				fi.offset=end-orig_offset(disk_bytenr在inode中的逻辑偏移)
+		2.将slot-1变成合并的extent_data
+			1.更新extent_data
+				fi.generation=transid
+				fi.num_bytes=end-other_start
+		3.标记leaf dirty，并跳到out
+3.如果offset&lt;start,extent_end=end
+	1.extent_mergeable查看后一个slot是否可以合并，如果可以合并
+		1.path变成改成offset~start
+			fi.num_bytes=start-offset
+			fi.generation=transid
+		2.将start之后的赋给slot++
+			1.更新slot+1的key
+				new_key.offset = start
+			2.更新slot+1的数据
+				fi.generation=transid
+				fi.num_bytes=ohter_end-start
+				fi.offset=start-orig_offset
+		3.标记leaf dirty，并跳到out
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>20470</x>
+      <y>15380</y>
+      <w>180</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>20340</x>
+      <y>15920</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>extent_mergeable</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>20390</x>
+      <y>15880</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>20390</x>
+      <y>15950</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>20240</x>
+      <y>15990</y>
+      <w>380</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>1.如果slot不在leaf的范围内，返回0
+2.slot的objectid要是ino，type要是BTRFS_EXTENT_DATA_KEY
+3.以btrfs_file_extent_item方式解析slot数据
+	1.filter，不通过返回0
+		1.要是extent_reg
+		2.disk_bytenr和对应的逻辑offset相同
+		3.不能有compression encryption other_encoding
+	2.如果指定了start和end，要和其逻辑偏移相同，否则返回0
+	3.如果满足，返回1
+		*start = key.offset;
+	*end = extent_end
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>20730</x>
+      <y>15420</y>
+      <w>460</w>
+      <h>780</h>
+    </coordinates>
+    <panel_attributes>4.将段在offset~extend_end范围内extend_data截取处理(注：前面的btrfs_search_slot
+	保证了offset不可能比start大，但是end呢？如果比extent_end大会导致item出现负值
+	这里只能依靠caller来保证段的安全性)
+	1.如果start和offset重合，将extent_data从end处split，否则先从start处split
+	2.btrfs_duplicate_item复制一个item
+		new_key.offset = split
+	3.重新设置item
+		1.slot-1
+			1.fi.gen=transid
+				fi.num_bytes=split-key.offset
+		2.slot
+			1.fi.gen=transid
+				fi.offset=split-orig_offset
+				fi.num_bytes=extent_end-split(随机调用可能出错)
+	4.标记leaf dirty
+	5.btrfs_inc_extent_ref增加对整个disk_bytenr的引用
+	6.选取段所在的extent_data,再次循环进行split
+		1.如果从start开始分割
+			key.offset = start
+		2.如果从end开始分割
+			path-&gt;slots[0]--;
+			extent_end = end
+	7.置上recow
+5.将段所在的extent_data通过extent_mergeable向后合并，如果合并成功
+	1.如果recow，跳到1，重新查找extent
+	2.否则统计要删的slot
+		extent_end = other_end;//更新要保留的end
+		del_slot = path-&gt;slots[0] + 1;
+		del_nr++;
+	3.btrfs_free_extent释放对disk_bytenr的引用
+6.extent_mergeable尝试向前进行merge
+	1.如果需要recow，跳到1重新查找
+	2.统计要删的slot
+		key.offset = other_start;//更新保留的offset
+		del_slot = path-&gt;slots[0];//更新起始的slot
+		del_nr++;
+	3.btrfs_free_extent释放对disk_bytenr的引用
+7.如果没有要删的slot，更新段对应的fi
+	1.fi.type=BTRFS_FILE_EXTENT_REG
+		fi.generation=transid
+	2.标记leaf dirty
+8.如果有要删除的slot
+	1.fi.type=BTRFS_FILE_EXTENT_REG
+		fi.generation=transid
+		fi.numbytes-extent_end - key.offset
+	2.标记leaf dirty
+	3.btrfs_del_items删除对应的slot
+9.out：释放path，并返回0
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>20620</x>
+      <y>15380</y>
+      <w>230</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>21320</x>
+      <y>15340</y>
+      <w>200</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>insert_reserved_file_extent</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>21230</x>
+      <y>15410</y>
+      <w>450</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>1.__btrfs_drop_extents删除inode段对应的extent_data（做cow）
+2.如果没有插入extent_data的item，通过btrfs_insert_empty_item
+	添加一个item
+	ins.objectid = btrfs_ino(inode);
+	ins.offset = file_pos;
+	ins.type = BTRFS_EXTENT_DATA_KEY;
+	path-&gt;leave_spinning = 1;
+3.填充插入的btrfs_file_extent_item，并标记leaf dirty
+4.inode_add_bytes更新i_blocks i_bytes(drop中会删除之前的)
+5.btrfs_alloc_reserved_file_extent
+	ins.objectid = disk_bytenr;
+	ins.offset = disk_num_bytes;
+	ins.type = BTRFS_EXTENT_ITEM_KEY;
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>21410</x>
+      <y>15370</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
